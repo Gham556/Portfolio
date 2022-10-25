@@ -13,4 +13,12 @@ app.get('/', (req, res) => {
     res.render('home')
 });
 
+app.get('/memory-game', (req, res) => {
+    res.render('memory_game')
+});
+
+app.get('/knights-travais', (req, res) => {
+    res.render('knights_travais')
+})
+
 module.exports = app;

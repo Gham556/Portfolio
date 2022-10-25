@@ -1,13 +1,13 @@
 
-
+import * as styles from "../components/index.module.css"
 const nextButton = document.querySelector('#next');
-const allImages = document.querySelector('#allImages');
+const allImages = document.querySelector(styles.allImages);
 const lastButton = document.querySelector('#last');
 const dots = document.querySelectorAll('.dot');
 var x = 0 ; 
 let y = 0;
 
-exports.cycleRight = function () {
+export const cycleRight = function () {
     if (x === 200) {
     x = 0;
    }
@@ -35,8 +35,8 @@ const jumpTo = function () {
 }
 
 
-nextButton.addEventListener('click', cycleRight);
-lastButton.addEventListener('click', cycleLeft);
+//nextButton.addEventListener('click', cycleRight);
+//lastButton.addEventListener('click', cycleLeft);
 
 for (let dot of dots) {
     dot.addEventListener('click', jumpTo);
