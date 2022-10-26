@@ -4,8 +4,9 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
-import cycleRight from "../components/caroselController.js";
+import * as styles from "../components/index.module.css";
+import DemoCarousel from "../components/react-carousel";
+
 
 const links = [
   {
@@ -67,9 +68,9 @@ const IndexPage = () => (
     <Seo title="Home" />
     <div className={styles.textCenter}>
     <StaticImage
-        src="../images/example.png"
+        src="../images/George-Fotheringham-logos_black_1200-1200.png"
         loading="eager"
-        width={64}
+        
         quality={95}
         formats={["auto", "webp", "avif"]}
         alt=""
@@ -80,13 +81,7 @@ const IndexPage = () => (
       </h1>
       <div className={styles.body1}> 
         <h1>Featured Projects</h1>
-        <div className={styles.carouselWindow}>
-            <div className={styles.allImages}>
-                <a href="https://github.com/Gham556/Memory-Card"><StaticImage src="../images/fredy-jacob-t0SlmanfFcg-unsplash.jpg" alt="memory-card"/></a>
-                <a href="https://github.com/Gham556/Knights-Travais"> <StaticImage src="../images/hassan-pasha-7SjEuEF06Zw-unsplash.jpg" alt="chess-knights"/></a>
-                <a href="https://github.com/Gham556/Inventory-Application"> <StaticImage src="../images/scott-graham-5fNmWej4tAA-unsplash.jpg" alt="computers"/> </a>
-            </div>
-        </div>
+        <DemoCarousel />
         <div class='buttons'> 
             <button id="next">Next</button>
             <button id="last">Last</button>
@@ -126,7 +121,7 @@ const IndexPage = () => (
   </Layout>
 )
 
-setInterval(cycleRight, 8000)
+
 /**
  * Head export to define metadata for the page
  *
