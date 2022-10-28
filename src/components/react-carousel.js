@@ -11,15 +11,15 @@ class DemoCarousel extends Component {
             <Carousel width={700}>
                 <div>
                     <StaticImage width={700} height={400} src="../images/fredy-jacob-t0SlmanfFcg-unsplash.jpg"  alt="memory-card"/>
-                    <p className="legend">Legend 1</p>
+                    <p className="legend">Memory Game</p>
                 </div>
                 <div>
                     <StaticImage width={700} height={400} src="../images/hassan-pasha-7SjEuEF06Zw-unsplash.jpg" alt="chess-knights"/>
-                    <p className="legend">Legend 2</p>
+                    <p className="legend">Knights Travais</p>
                 </div>
                 <div>
                     <StaticImage width={700} height={400} src="../images/scott-graham-5fNmWej4tAA-unsplash.jpg" alt="computers"/>
-                    <p className="legend">Legend 3</p>
+                    <p className="legend">Application Inventory</p>
                 </div>
             </Carousel>
         );

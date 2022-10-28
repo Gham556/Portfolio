@@ -30,7 +30,7 @@ const links = [
 const samplePageLinks = [
   {
     text: "Page 2",
-    url: "page-2",
+    url: "App",
     badge: false,
     description:
       "A simple example of linking to another page within a Gatsby site",
@@ -76,9 +76,6 @@ const IndexPage = () => (
         alt=""
         style={{ marginBottom: `var(--space-3)` }}
       />
-      <h1>
-        Welcome to <b>My Portfolio</b>
-      </h1> 
         <h1>Featured Projects</h1>
         <DemoCarousel />
       <p className={styles.intro}>
@@ -103,13 +100,7 @@ const IndexPage = () => (
           <p className={styles.listItemDescription}>{link.description}</p>
         </li>
       ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
+    </ul>      
   </Layout>
 )
 
