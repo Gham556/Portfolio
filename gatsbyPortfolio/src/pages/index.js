@@ -70,7 +70,7 @@ const IndexPage = () => (
     <StaticImage
         src="../images/George-Fotheringham-logos_black_1200-1200.png"
         loading="eager"
-        
+        height={100}
         quality={95}
         formats={["auto", "webp", "avif"]}
         alt=""
@@ -78,15 +78,9 @@ const IndexPage = () => (
       />
       <h1>
         Welcome to <b>My Portfolio</b>
-      </h1>
-      <div className={styles.body1}> 
+      </h1> 
         <h1>Featured Projects</h1>
         <DemoCarousel />
-        <div class='buttons'> 
-            <button id="next">Next</button>
-            <button id="last">Last</button>
-        </div>   
-      </div>  
       <p className={styles.intro}>
         <b>Example pages:</b>{" "}
         {samplePageLinks.map((link, i) => (
@@ -95,8 +89,6 @@ const IndexPage = () => (
             {i !== samplePageLinks.length - 1 && <> · </>}
           </React.Fragment>
         ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
       </p>
     </div>
     <ul className={styles.list}>
