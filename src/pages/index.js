@@ -30,7 +30,7 @@ const links = [
 const samplePageLinks = [
   {
     text: "Page 2",
-    url: "App",
+    url: "app",
     badge: false,
     description:
       "A simple example of linking to another page within a Gatsby site",
