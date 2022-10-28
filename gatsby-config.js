@@ -27,6 +27,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
+        icon: "/src/images.George-Fotheringham-logos_black_1200-1200.png"
       },
     },
   ],
