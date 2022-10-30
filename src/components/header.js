@@ -22,7 +22,7 @@ const Header = ({ siteTitle }) => (
     >
       {siteTitle}
     </Link>
-    <StaticImage height="25" src="../images/George_Fotheringham-logos_black.png" alt="george fotheringham logo" />
+    <StaticImage height={25} src="../images/George_Fotheringham-logos_black.png" alt="george fotheringham logo" />
   </header>
 )
 

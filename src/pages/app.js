@@ -1,4 +1,4 @@
-import  React, { useState }  from 'react';
+import  React, { useEffect, useState }  from 'react';
 import Layout from "../components/layout"
 import ImageLoader from '../components/imageLoader';
 import aphrodite from '../images/aphrodite.png';
@@ -17,27 +17,78 @@ import persephone from  '../images/persephone.png';
 import poseidon from  '../images/poseidon.png';
 import psyche from  '../images/psyche.png'; 
 
+const imageLinks = [
+  {
+  url: '../images/aphrodite.png'
+},
+{
+  url: "../images/ares.png"
+},
+{
+  url: "../images/artemis.png"
+},
+{
+  url: "../images/daphne.png"
+},
+{
+  url: "../images/echo.png"
+},
+{
+  url: "../images/eris.png"
+},
+{
+  url: "../images/eros.png"
+},
+{
+  url: "../images/hades.png"
+},
+{
+  url: "../images/hecate.png"
+},
+{
+  url: "../images/hephaestus.png"
+},
+{
+  url: "../images/hermes.png"
+},
+{
+  url: "../images/persephone.png"
+},
+{
+  url: "../images/poseidon.png"
+},
+{
+  url: "../images/psyche.png"
+},
+
+]
+
 const App = () => {
   const [count, setCount] = useState(0);
   const [imageSourceArray, setArray] = useState([aphrodite, ares, artemis, daphne, echo, eris, eros, hades, hecates, hephaestus, hera, hermes, persephone, poseidon, psyche]);
   const [clickedArray, setClicked] = useState([]);
   const [highScore, setHighScore] = useState(0);
 
-    const incrementCount = () => {
-       console.log(clickedArray, 'at increment counter')
-      if (( clickedArray.filter( (item, index) => clickedArray.indexOf( item ) != index ).length ) >= 1) {
-        getHighScore(count);      
-        setCount(0);}
-        else {
-          setCount(count +1);
-        }
-    };
+    useEffect((e) => {
+      if (e !== undefined){ 
+        setClicked( clickedArray.concat( [e.target.src] ));
+      }
+    }, []);
 
-    const getClicked = (e) => {
-      setClicked( clickedArray.concat([e.target.src], incrementCount() ));
-      console.log( clickedArray, "at getClicked" )
-    }
-    const getRandom = (e) => {
+    useEffect(() => {
+        if (( clickedArray.filter( (item, index) => clickedArray.indexOf( item ) !== index ).length ) >= 1) {
+          if (count > highScore) {
+            setHighScore(count);
+          }
+    
+          setClicked([]);     
+          setCount(0);}
+          else {
+            setCount(count +1);
+          }
+    }, [clickedArray] );
+    
+    const getRandom = () => {
         let currentIndex = imageSourceArray.length, randomIndex;
         while (currentIndex !== 0) {
             randomIndex= Math.floor(Math.random()*currentIndex);
@@ -45,17 +96,8 @@ const App = () => {
             [imageSourceArray[currentIndex], imageSourceArray[randomIndex]] = [imageSourceArray[randomIndex], imageSourceArray[currentIndex]]             
         };
         setArray(imageSourceArray); 
-        return (getClicked(e))  
     };
 
-    const getHighScore = (e) => {
-      if (e > highScore) {
-        setHighScore(e);
-      }
-
-      setClicked([]);
-      console.log(clickedArray)
-    }
 
   return (
   <Layout>  
@@ -74,8 +116,12 @@ const App = () => {
           <div>{highScore}</div>
         </div>
       </div>  
-        <div>
-          <ImageLoader imageSourceArray={imageSourceArray} getRandom={getRandom}/>
+      <div>
+            {imageSourceArray.map((src) => {
+                return (
+                    <button onClick={getRandom}> <img src={src} alt='' height={50} /> </button>
+                )
+            })}
         </div>
     </div>
   </Layout>  
