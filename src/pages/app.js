@@ -1,6 +1,5 @@
 import  React, { useEffect, useState }  from 'react';
 import Layout from "../components/layout"
-import ImageLoader from '../components/imageLoader';
 import aphrodite from '../images/aphrodite.png';
 import ares from  '../images/ares.png';
 import artemis from  '../images/artemis.png';
@@ -16,6 +15,7 @@ import hermes from  '../images/hermes.png';
 import persephone from  '../images/persephone.png';
 import poseidon from  '../images/poseidon.png';
 import psyche from  '../images/psyche.png'; 
+import "../components/memoryGame.css";
 
 const imageLinks = [
   {
@@ -111,7 +111,7 @@ const App = () => {
         
   return (
   <Layout>  
-    <div>
+    <div className='main'>
       <div id='header'>
         <h1>Memory Game!</h1>
         <h2>Click An Image To Increase Your Score, But Be Sure Not To Click The Same Image Twice!</h2>
@@ -126,10 +126,10 @@ const App = () => {
           <div>{highScore}</div>
         </div>
       </div>  
-      <div>
+      <div className='game'>
             {imageSourceArray.map((src) => {
                 return (
-                    <img onClick={updateArray} src={src} alt='' height={50} />
+                    <img onClick={updateArray} src={src} alt='' height={100} />
                 )
             })}
         </div>
