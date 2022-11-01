@@ -129,7 +129,7 @@ const App = () => {
       <div>
             {imageSourceArray.map((src) => {
                 return (
-                    <button onClick={updateArray}> <img src={src} alt='' height={50} /> </button>
+                    <img onClick={updateArray} src={src} alt='' height={50} />
                 )
             })}
         </div>
