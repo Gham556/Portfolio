@@ -30,12 +30,12 @@ const links = [
 const samplePageLinks = [
   {
     text: "Memory Game",
-    url: "memory_game",
+    url: "memory-game",
     badge: false,
     description:
       "Click an image to increase your score but don't click the same image twice!",
   },
-  { text: "TypeScript", url: "using-typescript" },
+  { text: "Shopping Cart", url: "shopping-cart" },
   { text: "Server Side Rendering", url: "using-ssr" },
   { text: "Deferred Static Generation", url: "using-dsg" },
 ]

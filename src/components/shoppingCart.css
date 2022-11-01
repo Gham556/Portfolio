@@ -1,0 +1,45 @@
+
+  
+  .images {
+    width: 200px;
+    height: 200px;
+    margin: 32px;
+  }
+  
+  .item {
+    display: flex;
+    margin: 32px;
+  }
+  
+  .itemDetails {
+    margin: 32px;
+    width: 400px;
+  }
+  
+  .itemName{
+    align-self: center;
+  }
+  
+  #navBar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav {
+    display: grid; 
+    grid-template-columns: repeat(2, 100px);
+  }
+  
+  #cartHeader {
+    display: flex;
+    align-items: center;
+  }
+  
+  #cartHeader div {
+    margin-left: 70%;
+    
+  }
+  
+  #cartHeader h1 {
+    margin: 32px;
+  }
