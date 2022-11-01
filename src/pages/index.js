@@ -29,11 +29,11 @@ const links = [
 
 const samplePageLinks = [
   {
-    text: "Page 2",
-    url: "app",
+    text: "Memory Game",
+    url: "memory_game",
     badge: false,
     description:
-      "A simple example of linking to another page within a Gatsby site",
+      "Click an image to increase your score but don't click the same image twice!",
   },
   { text: "TypeScript", url: "using-typescript" },
   { text: "Server Side Rendering", url: "using-ssr" },
