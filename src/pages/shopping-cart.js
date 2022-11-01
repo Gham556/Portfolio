@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ItemManager from '../components/shoppingCartItemManager'
+import Layout from "../components/layout"
 
 
 const ShoppingCart = () => {
@@ -11,6 +12,7 @@ const ShoppingCart = () => {
     }
 
     return (
+      <Layout>  
         <div className="shoppingCartMain">
             <div id="cartHeader">
                 <h1>Shopping Cart</h1>
@@ -18,7 +20,8 @@ const ShoppingCart = () => {
                 <div data-testid='x'>Items In Cart: {itemsNum}</div>
             </div>
             <ItemManager incrementItems={incrementItems}/>
-        </div>    
+        </div>
+        </Layout>      
     )
 }; 
 
