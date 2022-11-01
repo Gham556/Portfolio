@@ -69,26 +69,23 @@ const App = () => {
   const [clickedArray, setClicked] = useState([]);
   const [highScore, setHighScore] = useState(0);
 
-    useEffect((e) => {
-      if (e !== undefined){ 
-        setClicked( clickedArray.concat( [e.target.src] ));
-      }
-    }, []);
-
-    useEffect(() => {
-        if (( clickedArray.filter( (item, index) => clickedArray.indexOf( item ) !== index ).length ) >= 1) {
-          if (count > highScore) {
-            setHighScore(count);
-          }
+  
+  
+   function updateArray (e) {
+    if (e !== undefined){ 
+      setClicked( clickedArray.concat( [e.target.src] ));
+    }
+  }
     
-          setClicked([]);     
-          setCount(0);}
-          else {
-            setCount(count +1);
-          }
-    }, [clickedArray] );
-    
-    const getRandom = () => {
+  useEffect(() => {
+    console.log(clickedArray)
+    if (clickedArray.length >= 1) {
+      getRandom()
+    }
+  }, [clickedArray])
+  
+     function getRandom (e) {
+      console.log(clickedArray)
         let currentIndex = imageSourceArray.length, randomIndex;
         while (currentIndex !== 0) {
             randomIndex= Math.floor(Math.random()*currentIndex);
@@ -96,9 +93,22 @@ const App = () => {
             [imageSourceArray[currentIndex], imageSourceArray[randomIndex]] = [imageSourceArray[randomIndex], imageSourceArray[currentIndex]]             
         };
         setArray(imageSourceArray); 
+         updateScore()
     };
 
-
+     function updateScore (e) { 
+      if (( clickedArray.filter( (item, index) => clickedArray.indexOf( item ) !== index ).length ) >= 1) {
+            
+        if (count > highScore) {
+              setHighScore(count);
+            }
+            setClicked([]);     
+            setCount(0);}
+            else {
+              setCount(count +1);
+            }
+          };
+        
   return (
   <Layout>  
     <div>
@@ -119,7 +129,7 @@ const App = () => {
       <div>
             {imageSourceArray.map((src) => {
                 return (
-                    <button onClick={getRandom}> <img src={src} alt='' height={50} /> </button>
+                    <button onClick={updateArray}> <img src={src} alt='' height={50} /> </button>
                 )
             })}
         </div>
