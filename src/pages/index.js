@@ -16,49 +16,10 @@ const links = [
       "Check Out Every Project On My Development Journey!",
   },
   {
-    text: "Resume",
-    url: "",
-    description: "Peruse My Work History And Accomplishments"
-  },
-  {
     text: "Linkedin",
     url: "https://www.linkedin.com/in/george-fotheringham-642976171/",
     description: "Look how professional I can be online!"
   },
-]
-
-const samplePageLinks = [
-  {
-    text: "Memory Game",
-    url: "memory-game",
-    badge: false,
-    description:
-      "Click an image to increase your score but don't click the same image twice!",
-  },
-  { text: "Shopping Cart", url: "shopping-cart" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
 ]
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
@@ -78,15 +39,6 @@ const IndexPage = () => (
       />
         <h1>Featured Projects</h1>
         <DemoCarousel />
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-      </p>
     </div>
     <ul className={styles.list}>
       {links.map(link => (

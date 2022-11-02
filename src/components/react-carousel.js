@@ -4,6 +4,7 @@ import  "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a l
 import { Carousel } from 'react-responsive-carousel';
 import { StaticImage } from 'gatsby-plugin-image';
 import * as styles from "../components/index.module.css";
+import { Link } from 'gatsby';
 
 class DemoCarousel extends Component {
     render() {
@@ -11,15 +12,15 @@ class DemoCarousel extends Component {
             <Carousel width={700}>
                 <div>
                     <StaticImage width={700} height={400} src="../images/fredy-jacob-t0SlmanfFcg-unsplash.jpg"  alt="memory-card"/>
-                    <p className="legend">Memory Game</p>
+                    <Link to="memory-game" className="legend">Memory Game</Link>
                 </div>
                 <div>
                     <StaticImage width={700} height={400} src="../images/hassan-pasha-7SjEuEF06Zw-unsplash.jpg" alt="chess-knights"/>
-                    <p className="legend">Knights Travais</p>
+                    <Link to="knights-travais" className="legend">Knights Travais</Link>
                 </div>
                 <div>
-                    <StaticImage width={700} height={400} src="../images/scott-graham-5fNmWej4tAA-unsplash.jpg" alt="computers"/>
-                    <p className="legend">Application Inventory</p>
+                    <StaticImage width={700} height={400} src="../images/bruno-kelzer-LvySG1hvuzI-unsplash.jpg" alt="shopping-cart"/>
+                    <Link to="shopping-cart" className="legend">Shopping Cart</Link>
                 </div>
             </Carousel>
         );
