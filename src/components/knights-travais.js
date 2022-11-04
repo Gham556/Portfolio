@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from "react";
 
 function square (x, y, link, upOneRightTwo, downOneLeftTwo, upTwoRightOne, downTwoLeftOne, upOneLeftTwo, downOneRightTwo, upTwoLeftOne, downTwoRightOne) {
     this.x = x;
@@ -268,16 +268,7 @@ findStart (start, end, pointer) {
 const myTree = new tree();
 const builtTree = myTree.mkTree(board)
 
-const findRoute = (e) => {
-    console.log(e)
-    e.preventDefault()
-   
-    let x = myTree.findStart([e.target[0].value, e.target[1].value], [e.target[2].value, e.target[3].value], myTree.root)
-    let y = Array.from(myTree.movDistance([e.target[0].value, e.target[1].value], [Number(e.target[2].value), Number(e.target[3].value)], x));
-    console.log(y)
-    let z = y.length
-   console.log('Your fastest route is ' + y.join() + ` in ${z} moves`)
-    }
+
 
 
 
@@ -298,7 +289,22 @@ const findRoute = (e) => {
    
 
    const KnightsUI = () => {
+    const [message, Setmessage] = useState('Your Results Will Update Here!');
+
+    const findRoute = (e) => {
+    
+        console.log(e)
+        e.preventDefault()
+       
+        let x = myTree.findStart([e.target[0].value, e.target[1].value], [e.target[2].value, e.target[3].value], myTree.root)
+        let y = Array.from(myTree.movDistance([e.target[0].value, e.target[1].value], [Number(e.target[2].value), Number(e.target[3].value)], x));
+        console.log(y)
+        let z = y.length
+       Setmessage('Your fastest route is ' + y.join() + ` in ${z} moves`)
+        }
     return (
+       <div> 
+        <h2>{message}</h2>
         <form onSubmit={findRoute}>
             <label>Start X value</label>
             <input name="x" type='number' max={8} min={1}></input>
@@ -310,6 +316,7 @@ const findRoute = (e) => {
             <input name="yEnd" type='number' max={8} min={1}></input>
             <button >Submit</button>
         </form>
+        </div> 
     )
    };
 
