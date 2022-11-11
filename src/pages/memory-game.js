@@ -112,19 +112,24 @@ const App = () => {
   return (
   <Layout>  
     <div className='main'>
-      <div id='header'>
+      <div id='title'>
         <h1>Memory Game!</h1>
         <h2>Click An Image To Increase Your Score, But Be Sure Not To Click The Same Image Twice!</h2>
       </div>
+      <div className='links'> 
+      <a href="https://github.com/Gham556/Memory-Card">Orginal Project Repository</a>
+      <a href="https://github.com/Gham556/Portfolio/tree/gatsby">Current Repository As Updated For This Site</a>
+      </div>
       <div id='countersContainer'>
         <div>
-          <div>Current Score</div>
-          <div>{count}</div>
+          <p className='currentScore'>Current Score</p>
+          <p className='currentScore'>{count}</p>
         </div>  
         <div>
-          <div>High Score</div>
-          <div>{highScore}</div>
-        </div>
+          <p className='highScore'>High Score</p>
+          <p className='highScore'>{highScore}</p>
+          </div>  
+      </div>
       </div>  
       <div className='game'>
             {imageSourceArray.map((src) => {
@@ -133,7 +138,7 @@ const App = () => {
                 )
             })}
         </div>
-    </div>
+    
   </Layout>  
   );
 }
