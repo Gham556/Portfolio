@@ -31,15 +31,17 @@
   }
   
   #cartHeader {
-    display: flex;
-    align-items: center;
+   text-align: center;
   }
   
-  #cartHeader div {
-    margin-left: 70%;
-    
+  .cart {
+    margin-left: 90%;
   }
   
   #cartHeader h1 {
+    margin: 32px;
+  }
+
+  .itemForm {
     margin: 32px;
   }

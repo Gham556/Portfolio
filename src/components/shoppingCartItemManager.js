@@ -23,7 +23,7 @@ const ItemManager = (props) => {
                             <div className="itemPrice">{item.price}</div>
                           </div>  
                           <div className="cartAdd">
-                            <form onSubmit={incrementItems}>   
+                            <form className="itemForm" onSubmit={incrementItems}>   
                                 <label>Quantity</label>
                                 <input type='number' min={0} max={10}></input> 
                                 <button type="submit">Add to Cart</button>

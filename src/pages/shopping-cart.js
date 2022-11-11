@@ -16,8 +16,11 @@ const ShoppingCart = () => {
         <div className="shoppingCartMain">
             <div id="cartHeader">
                 <h1>Shopping Cart</h1>
-                <p>(add a quantity of items to this demo cart")</p>
-                <div data-testid='x'>Items In Cart: {itemsNum}</div>
+                <div className="links">
+                    <a href="https://github.com/Gham556/Shopping-Cart">Original Project Repository</a>
+                    <a href="https://github.com/Gham556/Portfolio/tree/gatsby">Current Project Repository</a>
+                </div>
+                <div className="cart" data-testid='x'>Items In Cart: {itemsNum}</div>
             </div>
             <ItemManager incrementItems={incrementItems}/>
         </div>
