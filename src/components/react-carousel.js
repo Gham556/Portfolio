@@ -19,8 +19,8 @@ class DemoCarousel extends Component {
                     <Link to="knights-travais" className="legend">Knights Travais</Link>
                 </div>
                 <div>
-                    <StaticImage width={700} height={400} src="../images/bruno-kelzer-LvySG1hvuzI-unsplash.jpg" alt="shopping-cart"/>
-                    <Link to="shopping-cart" className="legend">Shopping Cart</Link>
+                    <StaticImage width={700} height={400} src="../images/wim-van-t-einde-uj7eb7CgqRk-unsplash.jpg" alt="umbrellas"/>
+                    <Link to="weather" className="legend">Weather App</Link>
                 </div>
             </Carousel>
         );

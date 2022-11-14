@@ -1,6 +1,6 @@
 @font-face {
     font-family: Butler;
-    src: url('/fonts/Butler/Butler_Bold.otf');
+    src: url('./fonts/Butler_Bold.otf');
 }
 
 * {
