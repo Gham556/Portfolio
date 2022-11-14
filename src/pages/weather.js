@@ -9,6 +9,7 @@ const WeatherApp = () => {
     const [state, setState] = useState('');
     const [country, setCountry] = useState('');
     const [renderElements, setRenderElements] = useState(['Oz', 'Mist', "70 degrees", '80 degrees', '70 degrees', '80 degrees', '80%', '90 degrees', '20 k/h' ]);
+    const [imgSrc, setImgSrc] = useState('');
 
     const handleChange = (e) => {
         if(e.target.id == 'city') {
@@ -49,17 +50,9 @@ const WeatherApp = () => {
                 })
 
             .then(function (response) {
-                console.log(response);
-                searchLocation.textContent = (city + ', ' + state);
-                image.src = `http://openweathermap.org/img/wn/${response[1][0].icon}@2x.png`
-                description.textContent = response[1][0].description;
-                 t.textContent = response[0].temp + '\u00B0';
-                 fl.textContent = response[0].feels_like + '\u00B0';
-                tmin.textContent = response[0].temp_min + '\u00B0';
-                tmax.textContent = response [0].temp_max + '\u00B0';
-                h.textContent = response[0].humidity + '%';
-                degrees.textContent = response[2].deg;
-                speed.textContent = response[2].speed + 'm/h';
+                setRenderElements([`${city}, ${state}`, response[1][0].description.toUpperCase(), response[0].temp + '\u00B0', response[0].feels_like + '\u00B0', response[0].temp_min + '\u00B0', response [0].temp_max + '\u00B0', response[0].humidity + '%', response[2].deg, response[2].speed + 'm/h']);
+                setImgSrc(`http://openweathermap.org/img/wn/${response[1][0].icon}@2x.png`);
+                
         });
 
 
@@ -75,14 +68,20 @@ const WeatherApp = () => {
                 </div>
                 <div>
                     <label htmlFor="country">Country</label>
-                    <select name="country" id="country" value={country} onChange={handleChange}></select>
+                    <select name="country" id="country" value={country} onChange={handleChange}>
+                        {allCountries.map((option) => {
+                            return (
+                            <option value={option}>{option}</option>
+                            )
+                        })}
+                    </select>
                 </div>
                 <button>Search</button>
             </form>
             <div id="displayContainer">
             <div id="location">{renderElements[0]}</div>
             <div id="weather">
-                <img id="logo" src="http://openweathermap.org/img/wn/50d@2x.png" alt=""></img>
+                <img id="logo" src={imgSrc} alt=""></img>
                 <div id="description">{renderElements[1]}</div>
             </div>
             <div id="temperatures">
