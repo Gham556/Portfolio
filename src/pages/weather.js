@@ -13,14 +13,21 @@ const WeatherApp = () => {
     const [imgSrc, setImgSrc] = useState('');
 
     const handleChange = (e) => {
-        if(e.target.id == 'city') {
+        if(e.target.id === 'city') {
+            if(/^[a-zA-Z\s]*$/.test(e.target.value)) {
             setCity(e.target.value);
+            }
+            
         }
         if(e.target.id == 'state') {
-            setState(e.target.value)
+            if(/^[a-zA-Z\s]*$/.test(e.target.value)) {
+                setState(e.target.value)
+            }
         }
         if(e.target.id == 'country') {
-            setCountry(e.target.value)
+            if(/^[a-zA-Z\s]*$/.test(e.target.value)) {
+                setCountry(e.target.value)
+            }
         }
     }
 
@@ -54,7 +61,10 @@ const WeatherApp = () => {
                 setRenderElements([`${city}, ${state}`, response[1][0].description.toUpperCase(), response[0].temp + '\u00B0', response[0].feels_like + '\u00B0', response[0].temp_min + '\u00B0', response [0].temp_max + '\u00B0', response[0].humidity + '%', response[2].deg, response[2].speed + 'm/h']);
                 setImgSrc(`http://openweathermap.org/img/wn/${response[1][0].icon}@2x.png`);
                 
-        });
+        })
+            .catch((error) => {
+                console.log(error)
+            });
 
 
     }
@@ -63,14 +73,14 @@ const WeatherApp = () => {
             <div className={styles.content}>    
                 <form onSubmit={onSubmit} className={styles.inputs}>
                     <label htmlFor="city">City</label>
-                    <input type="text" id="city" value={city} onChange={handleChange}></input>
+                    <input type="text" id="city" value={city} onChange={handleChange} required></input>
                     <div>
                         <label for="state">State(if in US)</label>
-                        <input type="text" id="state" value={state} onChange={handleChange}></input>
+                        <input type="text" id="state" value={state} onChange={handleChange} pattern={/\b\[A-Z]{2,}\b/g}></input>
                     </div>
                     <div>
                         <label htmlFor="country">Country</label>
-                        <select name="country" id="country" value={country} onChange={handleChange}>
+                        <select name="country" id="country" value={country} onChange={handleChange} required>
                             {allCountries.map((option) => {
                                 return (
                                 <option value={option}>{option}</option>
