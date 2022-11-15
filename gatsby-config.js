@@ -30,5 +30,10 @@ module.exports = {
         icon: "src/images/George-Fotheringham-logos_black_1200-1200.png"
       },
     },
+    {
+      resolve: `gatsby-source-mongodb`,
+      options: { dbName: `local`, collection: `documents`, connectionString: 'mongodb+srv://Gham556:Fotheringham556@cluster0.mbba2nz.mongodb.net/test',auth: {user: 'Gham556', password: 'Fotheringham556'} },
+      query: { documents: { as_of: { $gte: 1604397088013 } } },
+    },
   ],
 }
