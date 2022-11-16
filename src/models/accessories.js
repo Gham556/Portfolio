@@ -1,6 +1,6 @@
 const mongoose = require('mongoose'); 
 
-Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const AccessorySchema = new Schema({
     name: {type: String, required: true},
