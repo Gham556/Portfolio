@@ -30,15 +30,5 @@ module.exports = {
         icon: "src/images/George-Fotheringham-logos_black_1200-1200.png"
       },
     },
-    {
-      // The name of the plugin
-      resolve: 'gatsby-source-mongodb',
-      options: {
-          // Name of the database and collection where are books reside
-          dbName: 'bgg',
-          collection: 'bgg',
-          connectionString: 'mongodb://gham556:Fotheringham556@global.aws.realm.mongodb.com:27020,ac-oix0sfv-shard-00-01.qmwi6on.mongodb.net:27017,ac-oix0sfv-shard-00-00.qmwi6on.mongodb.net:27017/?keepAlive=true&poolSize=30&autoReconnect=true&socketTimeoutMS=360000&connectTimeoutMS=360000replicaSet=bgg'          ,
-      },
-  },
   ],
 }

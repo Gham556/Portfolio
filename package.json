@@ -10,7 +10,6 @@
     "gatsby-plugin-manifest": "^5.0.0",
     "gatsby-plugin-sharp": "^5.0.0",
     "gatsby-source-filesystem": "^5.0.0",
-    "gatsby-source-mongodb": "^5.0.0",
     "gatsby-transformer-sharp": "^5.0.0",
     "graphiql": "^2.1.0",
     "graphql": "^16.6.0",
