@@ -11,6 +11,10 @@ class DemoCarousel extends Component {
         return (
             <Carousel width={700}>
                 <div>
+                    <StaticImage width={700} height={400} src="../images/fox-hyde-5Q7xNm73WV8-unsplash.jpg"  alt="board-game"/>
+                    <Link to="http://ec2-34-201-77-115.compute-1.amazonaws.com:3000/catalog" className="legend">Inventory Application</Link>
+                </div>
+                <div>
                     <StaticImage width={700} height={400} src="../images/fredy-jacob-t0SlmanfFcg-unsplash.jpg"  alt="memory-card"/>
                     <Link to="memory-game" className="legend">Memory Game</Link>
                 </div>
